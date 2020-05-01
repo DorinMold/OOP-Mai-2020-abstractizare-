@@ -16,14 +16,14 @@ namespace OOP_Mai_2020__abstractizare_
 
         public override bool NullOrEmpty()
         {
-            if ( String.IsNullOrEmpty(Nume) || String.IsNullOrEmpty(Prenume) )
+            if ( String.IsNullOrEmpty(Nume.Trim()) || String.IsNullOrEmpty(Prenume.Trim()) )
             {
-                Console.WriteLine("Numele sau prenumele NU sunt corecte pentru obiectul: " + this);
+                Console.WriteLine($"Numele sau prenumele NU sunt corecte pentru obiectul: { this.GetType().Name } cu numele: { this.Nume }" );
                 BoolUnu = false;
                 return BoolUnu;
             } else
             {
-                Console.WriteLine("Numele sau prenumele sunt corecte pentru obiectul cu numele: " + this.Nume);
+                Console.WriteLine("Numele sau prenumele sunt corecte pentru obiectul cu numele: " + this.GetType().Name);
                 BoolUnu = true;
                 return BoolUnu;
             }
